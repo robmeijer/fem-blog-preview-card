@@ -1,0 +1,115 @@
+:root {
+    --clr-primary-400: hsl(47, 88%, 63%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-400: hsl(0, 0%, 50%);
+    --clr-neutral-900: hsl(0, 0%, 7%);
+
+    --fs-small: clamp(0.75rem, 3.1vw, 0.875rem);
+    --fs-medium: clamp(0.875rem, 3.5vw, 1rem);
+    --fs-large: clamp(1.25rem, 5.3vw, 1.5rem);
+
+    --fw-semibold: 600;
+    --fw-extrabold: 800;
+}
+
+body {
+    background-color: var(--clr-primary-400);
+    font-family: 'Figtree', system-ui, sans-serif;
+    font-size: var(--fs-medium);
+    font-weight: var(--fw-semibold);
+}
+
+.main {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+.card {
+    background-color: var(--clr-neutral-100);
+    border: 1px solid var(--clr-neutral-900);
+    border-radius: 1.25rem;
+    box-shadow: 8px 8px 0 0 #000;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem;
+    max-width: 24rem;
+    padding: 1.5rem;
+}
+
+.card:has(.card__title:hover, .card__title:focus-visible) {
+    box-shadow: 16px 16px 0 0 #000;
+}
+
+.card__image-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0.625rem;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card__image {
+    object-fit: none;
+    aspect-ratio: 1;
+}
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.card__category {
+    background-color: var(--clr-primary-400);
+    border-radius: 0.25rem;
+    color: var(--clr-neutral-900);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-extrabold);
+    padding: 0.25rem 0.75rem;
+    width: fit-content;
+}
+
+.card__publish-date {
+    color: var(--clr-neutral-900);
+    font-size: var(--fs-small);
+}
+
+.card__title {
+    color: var(--clr-neutral-900);
+    text-decoration: none;
+    width: fit-content;
+}
+
+.card__title:hover,
+.card__title:focus-visible {
+    color: var(--clr-primary-400);
+}
+
+.card__title > * {
+    font-size: var(--fs-large);
+    font-weight: var(--fw-extrabold);
+}
+
+.card__description {
+    color: var(--clr-neutral-400);
+}
+
+.card__author {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.card__author-avatar {
+    width: 2rem;
+    height: 2rem;
+}
+
+.card__author-name {
+    color: var(--clr-neutral-900);
+    font-size: 0.875rem;
+    font-weight: var(--fw-extrabold);
+}
